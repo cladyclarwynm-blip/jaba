@@ -1,0 +1,75 @@
+/* Basic reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+  background-color: #ffffff; /* Light mode background */
+  color: #000000; /* Light mode text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212; /* Dark mode background */
+  color: #e0e0e0; /* Dark mode text */
+}
+
+/* Toggle switch container */
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default checkbox */
+.toggle-switch input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s;
+}
+
+/* Slider knob */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* When checked, change background and move knob */
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+/* Label */
+label {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  user-select: none;
+}
